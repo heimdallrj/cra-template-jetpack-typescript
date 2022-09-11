@@ -2,7 +2,7 @@
 
 This is a custom template for [Create React App](https://github.com/facebook/create-react-app).
 
-You can use this template with `npm create-react-app --template jetpack-typescript`
+You can use this template with `npx create-react-app my-react-app --template jetpack-typescript`
 
 For more information, please refer to:
 
