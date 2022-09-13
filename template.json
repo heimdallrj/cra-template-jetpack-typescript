@@ -1,6 +1,7 @@
 {
   "package": {
     "dependencies": {
+      "axios": "^0.27.2",
       "styled-components": "^5.3.5",
       "typescript": "^4.4.2",
       "web-vitals": "^2.1.0"
