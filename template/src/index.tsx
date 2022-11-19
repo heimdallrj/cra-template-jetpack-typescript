@@ -1,19 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { JetpackProvider } from '@jetpack/react';
 
-import Providers from './providers';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
+
+// @todo: configure theme here
+const themeConfig = {};
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Providers>
+    <JetpackProvider config={themeConfig}>
       <App />
-    </Providers>
+    </JetpackProvider>
   </React.StrictMode>
 );
 

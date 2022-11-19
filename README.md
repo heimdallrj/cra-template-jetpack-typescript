@@ -17,8 +17,8 @@ Update `tsconfig.json` as below;
 {
   ..
   "compilerOptions": {
-    "baseUrl": "src"
     ..
+    "baseUrl": "src"
   },
   "include": ["src"]
 }
@@ -32,4 +32,18 @@ import Home from './screens/Home'; --> import Home from 'screens/Home';
 import logo from '../../assets/logo.svg'; --> import logo from 'assets/logo.svg';
 
 import Providers from './providers'; --> import Providers from 'providers';
+```
+
+## Configure `Storybook`
+
+Update `package.json` as below;
+
+```json
+{
+  "scripts": {
+    ..
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  }
+}
 ```
