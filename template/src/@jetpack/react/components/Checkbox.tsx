@@ -1,13 +1,31 @@
 import clsx from 'clsx';
 import { CSSProperties } from 'react';
-import { prefix } from '../config';
+import styled from 'styled-components';
 
-interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+type BlockProps = {
+  $flexDirection: string;
+};
+export const Block = styled.div<BlockProps>`
+  display: flex;
+  flex-direction: ${(props) => props.$flexDirection};
+  align-items: center;
+`;
+
+enum LabelPosMap {
+  right = 'row',
+  bottom = 'column',
+  left = 'row-reverse',
+  top = 'column-reverse',
+}
+
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean;
   className?: string;
   disabled?: boolean;
   inputStyle?: CSSProperties;
   label?: string;
+  labelPosition?: 'right' | 'bottom' | 'left' | 'top';
   name?: string;
   style?: CSSProperties;
   value?: string;
@@ -19,17 +37,19 @@ export default function Checkbox({
   disabled = false,
   inputStyle,
   label,
+  labelPosition = 'right',
   name,
-  style,
+  style = {},
   value,
   ...restProps
 }: CheckboxProps) {
   return (
-    <div
+    <Block
+      $flexDirection={LabelPosMap[labelPosition]}
       className={clsx(
-        `${prefix}-checkbox`,
-        checked && `${prefix}-checkbox--checked`,
-        disabled && `${prefix}-checkbox--disabled`,
+        'jpk-checkbox',
+        checked && 'jpk-checkbox--checked',
+        disabled && 'jpk-checkbox--disabled',
         className
       )}
       style={style}
@@ -37,7 +57,7 @@ export default function Checkbox({
       <input
         {...restProps}
         checked={checked}
-        className={`${prefix}-checkbox__input`}
+        className='jpk-checkbox__input'
         disabled={disabled}
         name={name}
         style={inputStyle}
@@ -45,10 +65,10 @@ export default function Checkbox({
         value={value}
       />
       {label && (
-        <label className={`${prefix}-checkbox__label`} htmlFor={name}>
+        <label className='jpk-checkbox__label' htmlFor={name}>
           {label}
         </label>
       )}
-    </div>
+    </Block>
   );
 }

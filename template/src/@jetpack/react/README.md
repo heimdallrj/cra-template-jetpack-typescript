@@ -66,6 +66,16 @@ root.render(
 :
 ```
 
-### Setting up Storybook
+### Configure `Storybook`
 
-TODO
+Update `package.json` as below;
+
+```json
+{
+  "scripts": {
+    ..
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  }
+}
+```

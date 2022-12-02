@@ -1,34 +1,50 @@
 import React, { useState } from 'react';
-import { prefix } from '../config';
 
-type AccordionProps = {
-  children: React.ReactNode;
+// @todo: allow change icons
+
+export type AccordionItemProps = {
+  children: string | React.ReactNode;
+  summary: string;
 };
 
-export function Accordion({ children }: AccordionProps) {
-  return <div className={`${prefix}-accordion`}>{children}</div>;
-}
-
-type AccordionItemProps = {
-  children: React.ReactNode;
-  title: string;
-};
-
-export function AccordionItem({ children, title }: AccordionItemProps) {
+export function AccordionItem({ children, summary }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`${prefix}-accordion__item`}>
+    <section className='jpk-accordion__section'>
       <div
-        className={`${prefix}-accordion__title`}
+        className='jpk-accordion__summary'
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div>{title}</div>
+        <div>{summary}</div>
         <div>{isOpen ? '-' : '+'}</div>
       </div>
-      {isOpen && (
-        <div className={`${prefix}-accordion__content`}>{children}</div>
-      )}
+      {isOpen && <div className='jpk-accordion__content'>{children}</div>}
+    </section>
+  );
+}
+
+export type AccordionDataProps = {
+  id?: string;
+  summary: string;
+  content: string | React.ReactNode;
+};
+
+export type AccordionProps = {
+  children: React.ReactNode;
+  data?: AccordionDataProps[];
+};
+
+export function Accordion({ children, data }: AccordionProps) {
+  return (
+    <div className='jpk-accordion'>
+      {data
+        ? data.map(({ id, summary, content }: AccordionDataProps) => (
+            <AccordionItem key={id ?? summary} summary={summary}>
+              {content}
+            </AccordionItem>
+          ))
+        : children}
     </div>
   );
 }

@@ -1,27 +1,36 @@
 import clsx from 'clsx';
 import { CSSProperties } from 'react';
-import { prefix } from '../config';
+
+enum LabelPosMap {
+  right = 'row',
+  bottom = 'column',
+  left = 'row-reverse',
+  top = 'column-reverse',
+}
+
+type InputTypes =
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week';
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   disabled?: boolean;
   inputStyle?: CSSProperties;
   label?: string;
+  labelPosition?: 'right' | 'bottom' | 'left' | 'top';
   name?: string;
   style?: CSSProperties;
-  type?:
-    | 'color'
-    | 'date'
-    | 'datetime-local'
-    | 'email'
-    | 'month'
-    | 'number'
-    | 'password'
-    | 'tel'
-    | 'text'
-    | 'time'
-    | 'url'
-    | 'week';
+  type?: InputTypes;
   value?: string;
 }
 
@@ -30,25 +39,30 @@ export default function TextInput({
   disabled = false,
   inputStyle,
   label,
+  labelPosition = 'right',
   name,
   style,
-  type = 'color',
+  type = 'text',
   value,
   ...restProps
 }: TextInputProps) {
   return (
     <div
       className={clsx(
-        `${prefix}-text-input`,
-        disabled && `${prefix}-text-input--disabled`,
+        'jpk-text-input',
+        disabled && 'jpk-text-input--disabled',
         className
       )}
-      style={style}
+      style={{ ...style, flexDirection: LabelPosMap[labelPosition] }}
     >
-      {label && <label htmlFor={name}>{label}</label>}
+      {label && (
+        <label htmlFor={name} className='jpk-text-input__label'>
+          {label}
+        </label>
+      )}
       <input
         {...restProps}
-        className={`${prefix}-text-input__input`}
+        className='jpk-text-input__input'
         disabled={disabled}
         name={name}
         style={inputStyle}

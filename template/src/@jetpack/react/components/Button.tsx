@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
-import { prefix } from '../config';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   size?: 'small' | 'medium' | 'large';
@@ -23,9 +23,9 @@ export default function Button({
       {...restProps}
       type={type}
       className={clsx(
-        `${prefix}-btn`,
-        `${prefix}-btn__${variant}`,
-        `${prefix}-btn__${variant}--${size}`,
+        'jpk-btn',
+        `jpk-btn__${variant}`,
+        `jpk-btn__${variant}--${size}`,
         className
       )}
     >

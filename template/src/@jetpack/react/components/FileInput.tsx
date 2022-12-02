@@ -1,7 +1,16 @@
-import { prefix } from '../config';
+import clsx from 'clsx';
 
-interface FileInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface FileInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  className?: string;
+}
 
-export default function FileInput(props: FileInputProps) {
-  return <input {...props} className={`${prefix}-file-input`} type='file' />;
+export default function FileInput({ className, ...restProps }: FileInputProps) {
+  return (
+    <input
+      {...restProps}
+      className={clsx('jpk-file-input', className)}
+      type='file'
+    />
+  );
 }

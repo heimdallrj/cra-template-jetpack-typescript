@@ -16,9 +16,9 @@ export default {
 const Template: ComponentStory<typeof Accordion> = ({}) => {
   return (
     <Accordion>
-      <AccordionItem title='Item 1'>Item 1 Contents</AccordionItem>
-      <AccordionItem title='Item 2'>Item 2 Contents</AccordionItem>
-      <AccordionItem title='Item 3'>Item 3 Contents</AccordionItem>
+      <AccordionItem summary='Item 1'>Item 1 Contents</AccordionItem>
+      <AccordionItem summary='Item 2'>Item 2 Contents</AccordionItem>
+      <AccordionItem summary='Item 3'>Item 3 Contents</AccordionItem>
     </Accordion>
   );
 };

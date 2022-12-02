@@ -1,13 +1,12 @@
-import styled from 'styled-components';
+import React from 'react';
+import Block, { BlockProps } from './Block';
 
-interface IProps {
-  gap?: number;
+interface Props extends BlockProps {}
+
+export default function Col({ children, ...restProps }: Props) {
+  return (
+    <Block {...restProps} display='flex' flexDirection='column'>
+      {children}
+    </Block>
+  );
 }
-const Col = styled.div<IProps>`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: ${({ gap }) => gap || 0}px;
-`;
-
-export default Col;

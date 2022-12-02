@@ -1,6 +1,11 @@
+import clsx from 'clsx';
 import styled from 'styled-components';
 
-export const Table = styled.table``;
+// @todo: implement this properly
+
+export const Table = styled.table.attrs(({ className }) => ({
+  className: clsx(className, 'jpk-table'),
+}))``;
 export const TableHeader = styled.thead``;
 export const TableRow = styled.tr``;
 export const TableColHead = styled.th``;

@@ -2,9 +2,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import ThemeProvider from './ThemeProvider';
 
 export default function Providers({ children, config }: any) {
+  const theme: any = config.theme || {};
   return (
     <HelmetProvider>
-      <ThemeProvider config={config}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </HelmetProvider>
   );
 }

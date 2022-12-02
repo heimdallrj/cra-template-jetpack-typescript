@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
-import { prefix } from '../config';
 
 export const Tab = ({ title, selectedTab, onClick }: any) => {
   const selectTabHandler = () => {
@@ -10,8 +9,8 @@ export const Tab = ({ title, selectedTab, onClick }: any) => {
   return (
     <li
       className={clsx(
-        `${prefix}-tab__button`,
-        selectedTab === title && `${prefix}-tab--active`
+        'jpk-tab__button',
+        selectedTab === title && 'jpk-tab--active'
       )}
       onClick={selectTabHandler}
     >
@@ -32,8 +31,8 @@ export const Tabs = ({ children }: any) => {
   };
 
   return (
-    <div className={`${prefix}-tabs`}>
-      <ol className={`${prefix}-tab`}>
+    <div className='jpk-tabs'>
+      <ol className='jpk-tab'>
         {children.map((child: any) => {
           const { title } = child.props;
 
@@ -47,7 +46,7 @@ export const Tabs = ({ children }: any) => {
           );
         })}
       </ol>
-      <div className={`${prefix}-tab__content`}>
+      <div className='jpk-tab__content'>
         {children.map((child: any) => {
           if (child.props.title !== selectedTab) return undefined;
           return child.props.children;

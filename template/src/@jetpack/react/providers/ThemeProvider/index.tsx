@@ -6,13 +6,13 @@ import './normalize.css';
 
 type Props = {
   children: React.ReactNode;
-  config: any;
+  theme: any;
 };
 
-export default function ThemeProvider({ children, config }: Props) {
+export default function ThemeProvider({ children, theme }: Props) {
   return (
-    <StyledProvider theme={config}>
-      <GlobalStyle />
+    <StyledProvider theme={theme}>
+      <GlobalStyle {...theme} />
       {children}
     </StyledProvider>
   );

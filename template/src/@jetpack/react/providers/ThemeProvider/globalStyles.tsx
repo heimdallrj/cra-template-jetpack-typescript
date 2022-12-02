@@ -1,12 +1,14 @@
+// @ts-nocheck
 import { createGlobalStyle } from 'styled-components';
-import { prefix } from '../../config';
 
 export const GlobalStyle = createGlobalStyle`
   html {}
   aside {}
   article {}
   b {}
-  body {}
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
   button {
     appearance: none;
     box-sizing: border-box;
@@ -72,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     thead tr {
-      background-color: #009879;
+      background-color: ${({ colors, mode }) => colors.primary[mode]};
       color: #ffffff;
       text-align: left;
     }
@@ -85,11 +87,11 @@ export const GlobalStyle = createGlobalStyle`
         background-color: #f3f3f3;
       }
       tr:last-of-type {
-        border-bottom: 2px solid #009879;
+        border-bottom: 2px solid ${({ colors, mode }) => colors.primary[mode]};
       }
       tr.active-row {
         font-weight: bold;
-        color: #009879;
+        color: ${({ colors, mode }) => colors.primary[mode]};
       }
     } 
   }
@@ -98,33 +100,39 @@ export const GlobalStyle = createGlobalStyle`
   ul li {}
 
   /* Custom:Accordion */
-  .${prefix}-accordion {
+  .jpk-accordion {
     display: flex;
     flex-direction: column;
+    gap: 2px;
 
-    .${prefix}-accordion__item {}
-    .${prefix}-accordion__title {
-      background: rgb(0 0 0 / 20%);
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      box-shadow: 0px 1px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    .jpk-accordion__section {}
+    .jpk-accordion__summary {
+      background: ${({ colors, mode }) => colors.primary[mode]};
+      box-shadow: 0px 1px 1px -1px ${({ colors, mode }) =>
+        colors.primary[
+          mode
+        ]}, 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       padding: 10px;
+      color: white;
     }
-    .${prefix}-accordion__content {
+    .jpk-accordion__content {
       padding: 10px;
     }
   }
 
   /* Custom:Button */
-  .${prefix}-btn {
+  .jpk-btn {
     border-radius: 4px;
     &__contained {
-      background-color: rgb(25, 118, 210);
+      background-color: ${({ colors, mode }) => colors.primary[mode]};
       border: 0px;
-      box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+      box-shadow: ${({ colors, mode }) =>
+        colors.primary[
+          mode
+        ]} 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
       color: rgb(255, 255, 255);
 
       &--small {
@@ -148,7 +156,7 @@ export const GlobalStyle = createGlobalStyle`
       background-color: transparent;
       border: 1px solid rgba(25, 118, 210, 0.5);
       box-shadow: none;
-      color: rgb(25, 118, 210);
+      color: ${({ colors, mode }) => colors.primary[mode]};
 
       &--small {
         padding: 3px 9px;
@@ -170,7 +178,7 @@ export const GlobalStyle = createGlobalStyle`
       background-color: transparent;
       border: 0px;
       border-radius: 4px;
-      color: rgb(25, 118, 210);
+      color: ${({ colors, mode }) => colors.primary[mode]};
 
       &--small {
         padding: 4px 5px;
@@ -195,7 +203,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* Custom:Checkbox */
-  .${prefix}-checkbox {
+  .jpk-checkbox {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -210,7 +218,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* Custom:TextInput */
-  .${prefix}-text-input {
+  .jpk-text-input {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -222,8 +230,49 @@ export const GlobalStyle = createGlobalStyle`
     &__input {}
   }
 
+  /* Custom:SearchInput */
+  .jpk-search-input {
+    display: flex;
+    border: 1px solid;
+
+    &__input {
+      flex: 1;
+      border: 0;
+      padding: 0 10px;
+    }
+    &__icon {
+      cursor: pointer;
+      width: 32px;
+    }
+  }
+
+  /* Custom:Search Form */
+  .jpk-search-form {
+    display: flex;
+
+    &--disabled {}
+
+    &__input {}
+
+    &__btn {}
+
+    &__icon {}
+  }
+
+  /* Custom: Select */
+  .jpk-select {
+
+    &--disabled {}
+
+    &__label {}
+
+    &__menu {}
+
+    &__menu-item {}
+  }
+
   /* Custom:Radio */
-  .${prefix}-radio {
+  .jpk-radio {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -238,8 +287,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* Custom:Tabs */
-  .${prefix}-tabs {
-    .${prefix}-tab {
+  .jpk-tabs {
+    .jpk-tab {
       border-bottom: 1px solid #ccc;
       padding-left: 0;
 

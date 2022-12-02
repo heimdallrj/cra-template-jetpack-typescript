@@ -1,13 +1,16 @@
-import { prefix } from '../config';
+import clsx from 'clsx';
 
-interface ImageInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ImageInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   alt?: string;
+  className?: string;
   name?: string;
   src: string;
 }
 
 export default function ImageInput({
   alt,
+  className,
   name,
   src,
   ...restProps
@@ -16,7 +19,7 @@ export default function ImageInput({
     <input
       {...restProps}
       alt={alt || name || src}
-      className={`${prefix}-image-input`}
+      className={clsx('jpk-image-input', className)}
       name={name}
       src={src}
       type='image'
