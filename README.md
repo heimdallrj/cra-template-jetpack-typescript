@@ -9,34 +9,13 @@ For more information, please refer to:
 - [Getting Started](https://create-react-app.dev/docs/getting-started) – How to create a new app.
 - [User Guide](https://create-react-app.dev) – How to develop apps bootstrapped with Create React App.
 
-## Setting up for `Absolute Imports`
+## Setting up `Absolute Imports`
 
-Update `tsconfig.json` as below;
-
-```json
-{
-  ..
-  "compilerOptions": {
-    ..
-    "baseUrl": "src"
-  },
-  "include": ["src"]
-}
-```
-
-and, now you can change all the relative imports to absolute imports:
-
-```js
-import Home from './screens/Home'; --> import Home from 'screens/Home';
-
-import logo from '../../assets/logo.svg'; --> import logo from 'assets/logo.svg';
-
-import Providers from './providers'; --> import Providers from 'providers';
-```
+See [Docs](https://create-react-app.dev/docs/importing-a-component/#absolute-imports)
 
 ## Configure `Storybook`
 
-Update `package.json` as below;
+All the dependencies have installed in the bootstrap process. Just update the `package.json` as below;
 
 ```json
 {
