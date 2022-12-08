@@ -1,6 +1,4 @@
-import React from 'react';
-import { ThemeProvider } from '@jetpack/react';
-import { prefix } from '@jetpack/react/config';
+import { Provider as JetpackProvider } from '@jetpack/react';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,19 +8,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  html: {
-    prettier: {
-      tabWidth: 4,
-      useTabs: false,
-      htmlWhitespaceSensitivity: 'strict',
-    },
-  },
 };
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider config={{ prefix, theme: {} }}>
+    <JetpackProvider theme={{}}>
       <Story />
-    </ThemeProvider>
+    </JetpackProvider>
   ),
 ];

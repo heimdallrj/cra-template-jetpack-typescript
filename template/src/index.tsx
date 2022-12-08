@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { JetpackProvider } from '@jetpack/react';
+import { Provider as JetpackProvider } from '@jetpack/react';
 
 import App from './App';
 
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <JetpackProvider config={themeConfig}>
+    <JetpackProvider theme={themeConfig}>
       <App />
     </JetpackProvider>
   </React.StrictMode>
