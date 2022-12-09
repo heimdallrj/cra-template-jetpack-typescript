@@ -8,7 +8,7 @@ import {
   TableColHead,
   TableBody,
   TableCell,
-} from '@jetpack/react/generics';
+} from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/Table',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Tabs as Component, Tabs, Tab } from '@jetpack/react/generics';
+import { Tabs as Component, Tabs, Tab } from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/Tabs',

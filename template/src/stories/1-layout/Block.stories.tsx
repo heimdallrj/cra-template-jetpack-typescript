@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Block as Component } from '@jetpack/react';
+import { Block as Component } from '../../@jetpack/react';
 
 // @todo: show all the variants
 

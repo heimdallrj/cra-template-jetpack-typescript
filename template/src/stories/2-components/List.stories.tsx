@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { List as Component, ListItem } from '@jetpack/react';
+import { List as Component, ListItem } from '../../@jetpack/react';
 
 export default {
   title: 'Components/List',

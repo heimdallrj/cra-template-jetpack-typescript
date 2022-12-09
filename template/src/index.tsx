@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider as JetpackProvider } from '@jetpack/react';
+import { Provider as JetpackProvider } from './@jetpack/react';
 
 import App from './App';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { RangeInput as Component } from '@jetpack/react';
+import { RangeInput as Component } from '../../@jetpack/react';
 
 export default {
   title: 'Components/RangeInput',

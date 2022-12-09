@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button as Component } from '@jetpack/react/generics';
+import { Button as Component } from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/Button',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Accordion as Component, AccordionItem } from '@jetpack/react';
+import { Accordion as Component, AccordionItem } from '../../@jetpack/react';
 
 export default {
   title: 'Components/Accordion',
@@ -16,9 +16,24 @@ export default {
 const Template: ComponentStory<typeof Component> = ({}) => {
   return (
     <Component>
-      <AccordionItem summary='Item 1'>Item 1 Contents</AccordionItem>
-      <AccordionItem summary='Item 2'>Item 2 Contents</AccordionItem>
-      <AccordionItem summary='Item 3'>Item 3 Contents</AccordionItem>
+      <AccordionItem summary='Item 1'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </AccordionItem>
+      <AccordionItem summary='Item 2'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </AccordionItem>
+      <AccordionItem summary='Item 3'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </AccordionItem>
     </Component>
   );
 };

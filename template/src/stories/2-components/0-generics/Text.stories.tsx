@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Text, Text as Component } from '@jetpack/react/generics';
+import { Text, Text as Component } from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/Text',

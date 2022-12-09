@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Radio as Component } from '@jetpack/react/generics';
+import { Radio as Component } from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/Radio',

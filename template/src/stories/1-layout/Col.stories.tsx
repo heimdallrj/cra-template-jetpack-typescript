@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Col as Component } from '@jetpack/react';
+import { Col as Component } from '../../@jetpack/react';
 
 export default {
   title: 'Layout/Col',

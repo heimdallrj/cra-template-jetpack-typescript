@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TextInput, TextInput as Component } from '@jetpack/react';
+import { TextInput, TextInput as Component } from '../../@jetpack/react';
 
 export default {
   title: 'Components/TextInput',

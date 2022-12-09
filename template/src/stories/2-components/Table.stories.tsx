@@ -8,7 +8,7 @@ import {
   TableColHead,
   TableBody,
   TableCell,
-} from '@jetpack/react';
+} from '../../@jetpack/react';
 
 export default {
   title: 'Components/Table',

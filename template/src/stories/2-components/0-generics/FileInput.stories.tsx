@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { FileInput as Component } from '@jetpack/react/generics';
+import { FileInput as Component } from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/FileInput',

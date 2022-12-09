@@ -1,6 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TextInput, TextInput as Component } from '@jetpack/react/generics';
+import {
+  TextInput,
+  TextInput as Component,
+} from '../../../@jetpack/react/generics';
 
 export default {
   title: 'Components/Generics/TextInput',
